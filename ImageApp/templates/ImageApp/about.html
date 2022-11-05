@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        height: 100vh;
+        color: white;
+        padding: 10px;
+    }
+    h1::selection{
+        background-color: yellow;
+    }
+</style>
+<body>
+    <h1>friend lists:</h1>
+    <ul>
+        {% for x in user %}
+           <li style="background-color: {% cycle 'blue' 'pink' 'yellow' 'red' 'purple' %};margin:10px;">
+            {{x.name}}</li>
+        {% endfor %}
+    </ul>
+    {% include 'ImageApp/footer.html' with me="Joe" sponsor="CodeCamp Inc" %}
+
+</body>
+</html>
